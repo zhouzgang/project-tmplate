@@ -1,6 +1,10 @@
 package cn.ecomb.icore.ecomb.common.exception;
 
-import cn.ecomb.springcache.demo.support.ResponseBody;
+import cn.ecomb.icore.ecomb.common.domain.ResponseBody;
+import cn.ecomb.icore.ecomb.common.exception.custom.ModuleException;
+import cn.ecomb.icore.ecomb.common.exception.custom.ServiceException;
+import cn.ecomb.icore.ecomb.common.exception.custom.ValidationException;
+import cn.ecomb.icore.ecomb.common.exception.custom.WebException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -152,7 +156,7 @@ public class GlobalExceptionHandler {
      * @throws Exception
      */
     @ExceptionHandler(value= {BindException.class})
-    public ResponseEntity<Object> MethodArgumentNotValidHandler(HttpServletRequest request,
+    public ResponseEntity<Object> methodArgumentNotValidHandler(HttpServletRequest request,
                                                                 BindException ex) throws Exception {
         //按需重新封装需要返回的错误信息
         List<ResponseBody> invalidArguments = new ArrayList<>();

@@ -1,4 +1,4 @@
-package cn.ecomb.icore.ecomb.common.exception;
+package cn.ecomb.icore.ecomb.common.exception.custom;
 
 /**
  * web 层异常
